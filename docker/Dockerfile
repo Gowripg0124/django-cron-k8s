@@ -15,4 +15,4 @@ COPY . .
 RUN python manage.py migrate
 RUN python manage.py crontab add
 
-CMD ["sh", "-c", "cron && python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "cron -f & python manage.py runserver 0.0.0.0:8000 --noreload"]
